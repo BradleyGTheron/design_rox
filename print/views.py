@@ -2,8 +2,10 @@ from django.shortcuts import render, get_object_or_404
 from .models import Category, Print
 
 def home(request):
-    sale_prints = Print.objects.filter(home_page = True)
-    return render(request, 'print/home.html', {'sale_prints': sale_prints})
+    sale_prints = Print.objects.filter(home_page = True, promotion = 'SAL')
+    kids_prints = Print.objects.filter(home_page = True, category = 1)
+    return render(request, 'print/home.html', {'sale_prints': sale_prints,
+                                                'kids_prints': kids_prints })
 
 # def print_list(request, category_slug = None):
 #     category = None
