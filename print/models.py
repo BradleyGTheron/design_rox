@@ -19,7 +19,7 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('print:product_list_by_category', args=[self.slug])
 
-# ---------- PRINT MODEL ---------------
+# ---------- PRINT MODEL --------------------
 
 class Print(models.Model):
     GLOSS = 'GLS'
@@ -82,3 +82,19 @@ class Print(models.Model):
     def discounted_price(self):
         selling = self.price - (self.price * self.discount/100)
         return selling
+
+# ----------- GALERY MODEL (Gallery Images on the home page) -------------------------
+
+class Gallery(models.Model):
+    image = models.ImageField('Main Image',upload_to='prints/', blank=True)
+    image_tn = models.ImageField('Thumbnail Image',upload_to='prints/',blank=True)
+    name = models.CharField('Print Title', max_length=100)
+    sub_title = models.CharField('Sub Title', max_length=30)
+    description = models.TextField('Print Description', null=True, blank=True)
+    print_right = models.BooleanField(default=True)
+    enable = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name

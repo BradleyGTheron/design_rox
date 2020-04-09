@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Print
+from .models import Category, Print, Gallery
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display =['name','slug']
@@ -60,6 +60,13 @@ class PrintAdmin(admin.ModelAdmin):
         self.message_user(request, '{} prints have been enabled'.format(count))
     set_print_to_sale.short_enabled = 'Mark selected prints as enabled.'
 
+class GalleryAdmin(admin.ModelAdmin):
+    list_display = ['name','sub_title','image','print_right','enable']
+    list_filter = ['enable']
+    list_editable = ['print_right','enable']
+
+
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Print, PrintAdmin)
+admin.site.register(Gallery, GalleryAdmin)
 # Register your models here.
