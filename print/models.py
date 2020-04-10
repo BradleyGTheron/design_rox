@@ -10,8 +10,8 @@ class Category(models.Model):
 
     class Meta:
         ordering = ('name',)
-        verbose_name = 'category'
-        verbose_name_plural = 'categories'
+        verbose_name = 'Print Category'
+        verbose_name_plural = 'Print Categories'
 
     def __str__(self):
         return self.name
@@ -95,6 +95,10 @@ class Gallery(models.Model):
     enable = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Home Gallery Image'
+        verbose_name_plural = 'Home Gallery Images'
 
     def __str__(self):
         return self.name

@@ -13,7 +13,7 @@ section {
 /* ----- PAGE HEADER ------- */
 .blog-header {
   line-height: ;
-  border-bottom: 2px solid #708090;
+  border-bottom: 2px solid darkblue;
 }
 
 .blog-header-logo {
@@ -26,6 +26,7 @@ section {
 
 .blog-header-logo:hover {
   text-decoration: none;
+  color: grey;
 }
 
 /* --------- FONT ------------ */
@@ -43,7 +44,7 @@ h2 {
 h2:after {
     display: block;
     height: 2px;
-    background-color: #708090;
+    background-color: darkblue;
     /* background-color: #e67e22; */
     content: " ";
     width: 100px;

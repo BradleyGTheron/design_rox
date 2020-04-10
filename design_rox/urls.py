@@ -26,5 +26,10 @@ admin.site.index_title = 'Designs By Rox Dicky Administration'
 
 urlpatterns = [
     path('', print.views.home, name = 'home'),
+    path('photo/', include('photo.urls')),
+    path('wedding/', include('wedding.urls')),
+    path('party/', include('party.urls')),
+    path('business/', include('business.urls')),
+    path('kid/', include('kid.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

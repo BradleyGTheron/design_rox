@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'print.apps.PrintConfig',
+    'photo.apps.PhotoConfig',
+    'business.apps.BusinessConfig',
+    'party.apps.PartyConfig',
+    'wedding.apps.WeddingConfig',
+    'kid.apps.KidConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +134,6 @@ STATIC_URL = '/static/'
 #   MEDIA FILES
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+#LOGIN_REDIRECT_URL = 'user_board'
+LOGOUT_REDIRECT_URL = 'home'

@@ -51,37 +51,34 @@
 </head>
 <body>
   <div class="container">
-    <header class="blog-header py-3">
-      <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-3 pt-1">
-          <img src="{% static 'images/rox_logo.png' %}" class="rounded-sm" height="100" width="100"  alt="logo">
+
+      <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-3 pt-1">
+            <img src="{% static 'images/rox_logo.png' %}" class="rounded-sm" height="100" width="100"  alt="logo">
+          </div>
+          <div class="col-6 text-center">
+            <a class="blog-header-logo" href="{% url 'home' %}">Designs By Rox Dicky</a>
+          </div>
+          <div class="col-3 d-flex justify-content-end align-items-center">
+            <a class="text-muted" href="#" aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+            </a>
+            <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+            <a class="btn btn-sm btn-outline-secondary" href="#">Log In</a>
+          </div>
         </div>
-        <div class="col-6 text-center">
-          <a class="blog-header-logo" href="#">Designs By Rox Dicky</a>
-        </div>
-        <div class="col-3 d-flex justify-content-end align-items-center">
-          <a class="text-muted" href="#" aria-label="Search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-          </a>
-          <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-          <a class="btn btn-sm btn-outline-secondary" href="#">Log In</a>
-        </div>
+      </header>
+
+      <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+          <a class="p-2 text-muted" href="{% url 'kid' %}">Kids & Baby</a>
+          <a class="p-2 text-muted" href="{% url 'wedding' %}">Wedding</a>
+          <a class="p-2 text-muted" href="{% url 'party' %}">Party</a>
+          <a class="p-2 text-muted" href="{% url 'business' %}">Business</a>
+          <a class="p-2 text-muted" href="{% url 'photo_gallery' %}">Photo</a>
+        </nav>
       </div>
-    </header>
-    
-    <div class="nav-scroller py-1 mb-2">
-      <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="#">Everything Kids & Baby</a>
-        <a class="p-2 text-muted" href="#">Everything Wedding</a>
-        <a class="p-2 text-muted" href="#">Everything Party</a>
-        <a class="p-2 text-muted" href="#">Everything Business</a>
-        <a class="p-2 text-muted" href="#">Everything Photo</a>
-      </nav>
-    </div>
-
-
-
-
 
     {% block content %}
 
@@ -89,7 +86,7 @@
 
     <footer>
       <div class="row">
-        <div class="col span-1-of-2">
+        <div class="col-md-6 ml-auto">
           <ul class="footer-nav">
             <li><a href="#">Services</a></li>
             <li><a href="#">Kids & Baby</a></li>
@@ -98,7 +95,7 @@
             <li><a href="#">Photo</a></li>
           </ul>
         </div>
-        <div class="col span-1-of-2">
+        <div class="col-md-6 mr-auto">
           <ul class="social-links">
             <li><a href="#"><ion-icon name="logo-facebook" size="large"></ion-icon></a></li>
             <li><a href="#"><ion-icon name="logo-twitter" size="large"></ion-icon></i></a></li>
