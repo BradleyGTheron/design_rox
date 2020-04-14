@@ -350,8 +350,18 @@ footer p {
   z-index: 90;
 }
 
+.wrapper:hover {
+  text-decoration: none;
+}
+
 .wrapper h5 {
   margin-top: 10px;
+  color: grey;
+  text-decoration: none;
+}
+
+.wrapper h5:hover {
+  text-decoration: none;
 }
 
 .ribbon-wrapper-green {

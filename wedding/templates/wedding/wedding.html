@@ -6,4 +6,41 @@
 
 <h2>Wedding</h2>
 
+<section>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3 class="text-center mb-5">Custom Work Request</h3>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+          <label for="contact_number">Contact Number</label>
+          <input type="text" class="form-control" id="contact_number">
+        </div>
+
+        <div class="form-group">
+          <label for="Email">Email address</label>
+          <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descripion of what is required</label>
+          <textarea class="form-control" id="description" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="file_upload">Upload a image</label>
+          <input type="file" class="form-control-file" id="file_upload">
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <hr class="gallery-divider">
+</section>
+
 {% endblock %}

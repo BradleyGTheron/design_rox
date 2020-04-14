@@ -52,7 +52,7 @@ class Print(models.Model):
 
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     print_code = models.CharField('Print Code',max_length=20, db_index=True)
-    name = models.CharField('Print Name', max_length=100)
+    name = models.CharField('Print Name', max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
     description = models.TextField('Print Description', null=True, blank=True)
     frame = models.BooleanField('Print Framed')
@@ -76,7 +76,7 @@ class Print(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('print:product_detail', args=[self.id, self.slug])
+        return reverse('print:print_detail', args=[self.id, self.slug])
 
     @property
     def discounted_price(self):

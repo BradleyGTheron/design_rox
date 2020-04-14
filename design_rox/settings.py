@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'party.apps.PartyConfig',
     'wedding.apps.WeddingConfig',
     'kid.apps.KidConfig',
+    'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',
             ],
         },
     },
@@ -134,6 +137,8 @@ STATIC_URL = '/static/'
 #   MEDIA FILES
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+CART_SESSION_ID = 'cart'
 
 #LOGIN_REDIRECT_URL = 'user_board'
 LOGOUT_REDIRECT_URL = 'home'

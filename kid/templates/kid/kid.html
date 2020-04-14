@@ -6,4 +6,66 @@
 
 <h2>Kid's</h2>
 
+<img src="{% static 'images/kids_main.jpg' %}" alt="Image" class="img-thumbnail">
+
+<section class="section">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 text-center long-copy">A selection of prints for kid's and babies.</div>
+  </div>
+  <div class="row">
+    {% for kid_print in kid_prints %}
+    <div class="col-lg-3">
+      <div class="wrapper">
+        <img src="{{ kid_print.image_tn.url }}" alt="..." class="img-thumbnail">
+        <span class="sale"> R {{ kid_print.discounted_price | floatformat:0 }}</span>
+        <h5 class = "text-center"> {{ kid_print.name }}</h5>
+      </div>
+      <div class="btn-group text-center" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-sm btn-outline-secondary">Buy Me &raquo;</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary">Add Me &raquo;</button>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+  <hr class="gallery-divider">
+</section>
+
+<section>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3 class="text-center mb-5">Custom Work Request</h3>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+          <label for="contact_number">Contact Number</label>
+          <input type="text" class="form-control" id="contact_number">
+        </div>
+
+        <div class="form-group">
+          <label for="Email">Email address</label>
+          <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descripion of what is required</label>
+          <textarea class="form-control" id="description" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="file_upload">Upload a image</label>
+          <input type="file" class="form-control-file" id="file_upload">
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <hr class="gallery-divider">
+</section>
+
 {% endblock %}

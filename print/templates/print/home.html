@@ -29,9 +29,11 @@
       <div class="col-md-3">
         <div class="wrapper">
           <div class="ribbon-wrapper-red"><div class="ribbon-red">SALE</div></div>
-          <img src="{{ print.image_tn.url }}" alt="..." class="img-thumbnail">
-          <span class="sale">R {{ print.discounted_price }}</span>
-          <h5 class = "text-center"> {{ print.name }}</h5>
+          <a href="{{ print.get_absolute_url}}">
+            <img src="{% if print.image_tn %}{{ print.image_tn.url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}" alt="print" class="img-thumbnail">
+            <span class="sale">R {{ print.discounted_price }}</span>
+            <h5 class = "text-center"> {{ print.name }}</h5>
+          </a>
         </div>
         <div class="btn-group text-center" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-sm btn-outline-secondary">Buy Me &raquo;</button>
@@ -100,7 +102,7 @@
 
   <!------------ GALLERY START -------------------->
 
-  <section class=" section section-galery">
+  <section class="section section-galery">
     <h2>Gallery</h2>
     {% for gallery_print in gallery_prints %}
     {% if not gallery_print.print_right %}

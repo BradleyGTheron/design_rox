@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<section>
+  <div class="row">
+    <div class="col">
+      <img src="{% if print.image %}{{ print.image.url }}{% else %}{% static 'images/placeholder.png'%}{% endif %}" class="img-thumbnail" alt="Print">
+      <!-- <img src="{{ print.image.url }}" class="img-thumbnail" alt=""> -->
+    </div>
+    <div class="col">
+      <h3>{{ print.name }}</h3> <br>
+      <p>{{ print.description }}</p> <br>
+      <p>Size: {{ print.size }}</p> <br>
+      <p>{% if print.frame %} Framed: Yes {% else %} Framed: No {% endif %}</p> <br>
+      <form action="{% url 'cart:cart_add' print.id %}" method="POST">
+        {{ cart_print_form }}
+        {% csrf_token %}
+        <input type="submit" value="Add to cart" class="btn btn-primary">
+      </form>
+      <p>R {{ print.discounted_price }}</p> <br>
+
+      <p>{{ print.print_code }}</p>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<h2>Your shopping cart</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Print</th>
+      <th>Qty</th>
+      <th>Remove</th>
+      <th>Unit Price</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in cart %}
+    {% with print=item.print %}
+    <tr>
+      <td>
+        <a href="{{ print.get_absolute_url }}">
+          <img src="{% if print.image_tn %}{{ print.image_tn.url }}{% else %}{% static 'images/placeholder.png '%}{% endif %}" width="200px" class="img-thumbnail">
+        </a>
+      </td>
+      <td>{{ print.name }}</td>
+      <td>
+        <form action="{% url 'cart:cart_add' print.id %}" method="post">
+          {{ item.update_quantity_form.quantity }}
+          {{ item.update_quantity_form.update }}
+          <input type="submit" value="Update" class="btn btn-primary btn-sm">
+          {% csrf_token %}
+        </form>
+      </td>
+      <td><a href="{% url 'cart:cart_remove' print.id %}">Remove</a></td>
+      <td>R {{ item.price }}</td>
+      <td>R {{ item.total_price }}</td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+    <tr>
+      <td>Total</td>
+      <td colspan = "4"></td>
+      <td>R {{ cart.get_total_price }}</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <a href="{% url 'home' %}" class = "btn">Continue Shopping</a>
+
+</p>
+
+{% endblock %}
