@@ -27,6 +27,7 @@ admin.site.index_title = 'Designs By Rox Dicky Administration'
 
 urlpatterns = [
     path('', print.views.home, name = 'home'),
+    path('auth/', include('authenticate.urls', namespace='auth')),
     path('cart/', include('cart.urls', namespace='cart')),
     path('print/', include('print.urls', namespace='print')),
     path('photo/', include('photo.urls')),

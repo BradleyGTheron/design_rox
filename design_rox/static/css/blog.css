@@ -9,6 +9,10 @@ section {
     margin-right: 10px;
 }
 
+.login-section {
+  padding-bottom: 50px;
+}
+
 
 /* ----- PAGE HEADER ------- */
 .blog-header {
@@ -66,6 +70,13 @@ h1 h3, h4, h5, h6 {
 .box p {
     font-size: 90%;
     line-height: 145%;
+}
+
+
+/*-----------LOGIN SECTION ---------------*/
+.login-section {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 /* ---------- SALES SECTION --------------*/

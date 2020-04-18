@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'authenticate.apps.AuthenticateConfig',
     'print.apps.PrintConfig',
     'photo.apps.PhotoConfig',
     'business.apps.BusinessConfig',
