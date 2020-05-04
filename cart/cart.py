@@ -68,7 +68,7 @@ class Cart(object):
 
     def clear(self):
         #empty cart
-        self.session[setting.CART_SESSION_ID] = {}
+        self.session[settings.CART_SESSION_ID] = {}
         self.session.modified = True
 
     def get_total_price(self):

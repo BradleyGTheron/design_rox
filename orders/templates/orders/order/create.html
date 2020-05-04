@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<h2>Your Order</h2>
+
+<div class="row">
+  <div class="col-md-6">
+    <form class="" action="." method="POST">
+      {% csrf_token %}
+      {{ form.as_p}}
+      <p><input type="submit" name="" value="Place Order"></p>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Print Name</th>
+          <th>Qty</th>
+          <th>Cost(R)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart %}
+        <tr>
+          <td>{{ item.print.name}}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.total_price }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <td colspan="2">Total</td>
+          <td>{{ cart.get_total_price }}</td>
+        </tr>
+
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+{% endblock %}

@@ -29,6 +29,7 @@ urlpatterns = [
     path('', print.views.home, name = 'home'),
     path('auth/', include('authenticate.urls', namespace='auth')),
     path('cart/', include('cart.urls', namespace='cart')),
+    path('orders/', include('orders.urls', namespace='orders')),
     path('print/', include('print.urls', namespace='print')),
     path('photo/', include('photo.urls')),
     path('wedding/', include('wedding.urls')),
